@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 export default connect(
-    (state) => state.todos,
+    (state) => state,
     (dispatch) => ({
         remove: () => dispatch({ type: 'REMOVE_TODO' }),
         add: () =>

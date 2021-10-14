@@ -20,6 +20,10 @@ function Home() {
         history.push('/todo');
     }
 
+    function viewTodoDec() {
+        history.push('/todoDec');
+    }
+
     return (
         <>
             <button type="button" onClick={viewAbout}>
@@ -33,6 +37,9 @@ function Home() {
             </button>
             <button type="button" onClick={viewTodo}>
                 View Todo
+            </button>
+            <button type="button" onClick={viewTodoDec}>
+                View TodoDec
             </button>
         </>
     );

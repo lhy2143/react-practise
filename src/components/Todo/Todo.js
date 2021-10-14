@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+    console.log('ownProps---,', ownProps);
     const { todos } = state;
     return { todos };
 };

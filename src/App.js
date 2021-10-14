@@ -5,6 +5,7 @@ import About from './components/About';
 import Blog from './components/Blog';
 import Counter from './components/Counter';
 import TodoDecoration from './components/Todo/TodoDecoration';
+import Todo from './components/Todo/Todo';
 
 function usePageViews() {
     const location = useLocation();
@@ -33,8 +34,11 @@ function App(props) {
                 <Route path="/counter">
                     <Counter></Counter>
                 </Route>
-                <Route path="/todo">
+                <Route path="/todoDec">
                     <TodoDecoration></TodoDecoration>
+                </Route>
+                <Route path="/todo">
+                    <Todo name="lhy"></Todo>
                 </Route>
                 <Route>
                     <div>404</div>

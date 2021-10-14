@@ -22,15 +22,23 @@ Redux
 - `@reduxjs/toolkit`使用，https://react-redux.js.org/tutorials/quick-start
 - reac-redux(`connect`) 正常使用`connect`,`mapStateToProps`和`mapDispatchToProps`使用,`dispatch`方法传参
 - 将共用`connect`方法包装成装饰器
+  1.添加`babel-eslint`
+  2.添加 `ecmaFeatures: {legacyDecorators: true}`
+  3.`npm run eject` 并修改`package.json`中的`babel`配置
   ```
-    import {connect} from 'react-redux'
-    import {bindActionCreators} from 'redux'
-    import action from 'action.js'
-    
-    export default connect(
-    state=>state.main,
-    dispatch=>bindActionCreators(action,dispatch)
-    )
+  "babel": {
+    "presets": [
+      "react-app"
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-proposal-decorators",
+        {
+          "legacy": true
+        }
+      ]
+    ]
+  }
   ```
 - react-redux(`hooks useSelector useDispatch etc`)
 

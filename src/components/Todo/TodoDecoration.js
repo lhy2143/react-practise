@@ -5,32 +5,25 @@ import connect from './connect';
 @connect
 export default class TodoDecoration extends React.Component {
     render() {
-        console.log(111, this.props);
         return (
             <>
+                <button onClick={this.props.remove}>remove Todo</button>
                 <button
                     onClick={() => {
-                        remove();
-                    }}
-                >
-                    remove Todo
-                </button>
-                <button
-                    onClick={() => {
-                        add();
+                        this.props.add();
                     }}
                 >
                     add Todo
                 </button>
                 <div>
                     Todo:
-                    {this.props.todo.map((item) => (
+                    {this.props.todos.todo.map((item) => (
                         <div key={item}>{item}</div>
                     ))}
                 </div>
                 <div>
                     Done:
-                    {this.props.done.map((item) => (
+                    {this.props.todos.done.map((item) => (
                         <div key={item}>{item}</div>
                     ))}
                 </div>
@@ -40,8 +33,7 @@ export default class TodoDecoration extends React.Component {
 }
 
 TodoDecoration.propTypes = {
-    todo: PropTypes.object,
     remove: PropTypes.func,
     add: PropTypes.func,
-    done: PropTypes.object
+    todos: PropTypes.object
 };
